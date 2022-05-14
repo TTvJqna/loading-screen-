@@ -1,0 +1,126 @@
+<html>
+    <head>
+    <title>XenosPD</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+    <script type="text/javascript" src="js/text.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+
+<body class="is-preload">
+    <div id="wrapper">
+        <div id="bg"></div>
+        <div id="overlay"></div>
+        <div id="main">
+                <header id="header">
+                    <h1>XenosPD</h1>
+                    <p>Velkommen &nbsp;&bull;&nbsp; Danmarks største FivePD server! &nbsp;&bull;&nbsp; Læs reglerne!</p>
+                    <nav>
+                        <ul>
+                            <li><a href="https://discord.gg/EnsB3NdBbA" class="icon brands fa-discord" target="_blank" onclick="window.invokeNative('openUrl', 'https://discord.gg/EnsB3NdBbA');"><span class="label">Discord</span></a></li>
+                            <li><a href="https://www.xenospd.dk/" class="fa fa-window-maximize" target="_blank" onclick="window.invokeNative('openUrl', 'https://www.xenospd.dk/');"><span class="label">Website</span></a></li>
+                            <li><a href="https://www.patreon.com/join/xenospd?" class="icon brands fa-patreon" target="_blank" onclick="window.invokeNative('openUrl', 'https://www.patreon.com/join/xenospd?');"><span class="label">Patreon</span></a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+		</div>
+        <video autoplay muted loop id="video">
+            <source src="video/video.mp4" type="video/mp4" width=1920 height=1080>
+          </video>
+        <img src="img/cursor.png" alt="cursor" id="cursor">
+
+    <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+                <img src="img/music.png" width="30px" height="30px">
+                <span></span>
+            </label>
+
+        <ul class="menu__box">
+
+            <div id="app-cover">
+                <div id="player">
+                    <div id="player-track">
+                        <div id="album-name"></div>
+                        <div id="track-name"></div>
+                        <div id="track-time">
+                            <div id="current-time"></div>
+                            <div id="track-length"></div>
+                        </div>
+                        <div id="s-area">
+                            <div id="ins-time"></div>
+                            <div id="s-hover"></div>
+                            <div id="seek-bar"></div>
+                        </div>
+                    </div>
+                    <div id="player-content">
+                        <div id="album-art">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/61/Can%27t_Hold_Us.png/220px-Can%27t_Hold_Us.png" class="active" id="_1">
+                            <img src="https://www.thehypemagazine.com/wp-content/uploads/2018/10/3aa37254a41cf96e81572524ec523cb870f2bb89-620x350.jpg" id="_2">
+                            <img src="https://pics.filmaffinity.com/wiz_khalifa_feat_charlie_puth_see_you_again-416368435-large.jpg" id="_3">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/6/6c/Lukas_Graham_Youre_Not_There.jpg" id="_4">
+                            <img src="https://www.totalntertainment.com/wp-content/uploads/Imagine-Dragons-2.jpg" id="_5">
+                            <div id="buffer-box">Loading ...</div>
+                        </div>
+                        <div id="player-controls">
+                            <div class="control">
+                                <div class="button" id="play-previous">
+                                    <i class="fas fa-backward"></i>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <div class="button" id="play-pause-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <div class="button" id="play-next">
+                                    <i class="fas fa-forward"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </ul>
+    </div>
+    <script>
+        window.onload = function() { document.body.classList.remove('is-preload'); }
+        window.ontouchmove = function() { return false; }
+        window.onorientationchange = function() { document.body.scrollTop = 0; }
+    </script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+        function ffalse() {
+            return false;
+        }
+
+        function ftrue() {
+            return true;
+        }
+
+        document.onselectstart = new Function("return false");
+        if (window.sidebar) {
+            document.onmousedown = ffalse;
+            document.onclick = ftrue;
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).mousemove(function(e) {
+            $("#cursor").css({
+                left: e.pageX,
+                top: e.pageY
+            });
+        })
+    </script>
+</body>
+
+</html>
